@@ -1,0 +1,136 @@
+$baseColor1: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+$primaryTextColor: var(--primary-text-color);
+
+.btn-download-fixed-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+
+    // width: 100%;
+
+    &.is-fixed {
+        position: fixed;
+        z-index: 1001;
+        bottom: 30px;
+        right: 30px;
+    
+        align-self: center;
+
+        .btn-download-fixed {
+            border: 5px solid $baseColor3;
+            animation: blip 0.5s 0s infinite;
+            transition: blip 0.5s;
+            text-decoration: none;
+    
+            @keyframes blip {
+                0% { border-color: $baseColor1 }
+                25% { border-color: $baseColor2 }
+                50% { border-color: $baseColor3 }
+                75% { border-color: $baseColor2 }
+                100% { border-color: $baseColor1; }
+            }
+        }
+    
+        @media screen and (max-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+
+            text-align: center;
+            right: initial;
+            bottom: 4rem;
+            // font-size: 15px;
+            // border-radius: 50%;
+            // padding: 0.7rem;
+            // width: 90%;
+            // margin: 0 10px;
+    
+            .btn-download-fixed-text {
+                // display: none;
+            }
+    
+            .btn-download-fixed-icon {
+                width: 40px;
+            }
+        }
+    }
+
+    .btn-download-fixed {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    
+        border: none;
+        outline: none;
+        // color: #12171a;
+        color: $baseColor4;
+        font-weight: 700;
+        background: linear-gradient(150deg, $baseColor1 0%, $baseColor2 100%);
+        // background: linear-gradient(150deg, $baseColor3 0%, $baseColor4 100%);
+    
+        font-size: 18px;
+    
+        padding: 1rem 2rem;
+        border-radius: 40px;
+    
+        .btn-download-fixed-icon {
+            font-size: 25px;
+            width: 30px;
+        }
+    
+        transition: all 0.5s ease-in-out;
+    }
+
+    .btn-download-sm {
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.27);
+
+        bottom: 0;
+        
+        img {
+            width: 100%;
+        }
+        
+        &.btn-download-sm-ios {
+            background-color: $baseColor3;
+            color: $baseColor1;    
+            padding: 10px;
+        }
+        
+        &.btn-download-sm-android {
+            padding: 18px;
+            background-color: $baseColor2;
+            color: $baseColor4;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        
+        .btn-download-fixed {
+            width: 95%;
+            margin: 0 1rem;
+        }
+
+        .btn-download-sm {
+            width: 70px;
+
+            &.btn-download-sm-ios {  
+                padding: 7.5px;
+            }
+            
+            &.btn-download-sm-android {
+                padding: 15px;
+            }
+        }
+    }
+}

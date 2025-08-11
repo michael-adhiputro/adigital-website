@@ -1,0 +1,95 @@
+$baseColor: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+.coming-soon {
+    width: 100vw;
+    height: 100vh;
+    // margin: 75px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $baseColor;
+    background: linear-gradient(150deg, $baseColor 0%, $baseColor2 100%);
+
+    &-wrapper {
+        width: 90vw;
+        height: 90vh;
+        // background-color: rgba(255, 255, 255, 0.2);
+        background-color: $baseColor3;
+        border-radius: 50px;
+        border: 7px solid $baseColor4;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .first-part,
+        .second-part,
+        .third-part {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+            h1 {
+                font-family: 'Neue Kabel';
+                font-weight: 700;
+                font-size: 80px;
+                text-align: center;
+                color: $baseColor3;
+            }
+        
+            h2 {
+                font-size: 40px;
+                text-align: center;
+            }
+    
+            h3 {
+                text-align: center;
+                color: $baseColor;
+                font-size: 40px;
+                // text-decoration: underline;
+                border-bottom: 4px solid $baseColor;
+            }
+
+            img {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 900px) {
+                img {
+                    width: 60%;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                h1 {font-size: 60px;}
+
+                h2 {font-size: 30px;}
+
+                h3 {font-size: 30px;}
+            }
+
+            @media screen and (max-width: 510px) {
+                img {
+                    width: 80%;
+                }
+            }
+
+            @media screen and (max-width: 440px) {
+                h1 {font-size: 50px;}
+
+                h2 {font-size: 25px; word-break: break-all}
+
+                h3 {font-size: 25px;}
+            }
+        }
+    }
+
+
+}

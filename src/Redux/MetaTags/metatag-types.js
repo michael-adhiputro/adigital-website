@@ -1,0 +1,2 @@
+export const LOAD_METATAG = 'LOAD_METATAG';
+export const SAVE_METATAG = 'SAVE_METATAG';

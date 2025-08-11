@@ -1,0 +1,2 @@
+export const INIT_NAVBAR = 'INIT_NAVBAR';
+export const MOVE_TO_SECTION = 'MOVE_TO_SECTION';

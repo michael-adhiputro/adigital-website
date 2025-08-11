@@ -1,0 +1,41 @@
+$baseColor: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+$checkIcon: var(--check-icon);
+$whiteColor: var(--white-color);
+
+.form-label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-control {
+    
+}
+
+.form-check {
+    .form-check-input {
+        &:focus {
+            border-color: $baseColor3;
+            outline: none;
+            box-shadow: none;
+        }
+
+        &:checked {
+            background-color: #FFF;
+            border: none;
+            // background-color: $baseColor3;
+        
+            &[type=radio] {
+                background-image: var(--check-icon);
+                background-size: cover;
+            }
+        }
+    }
+
+    .form-check-label {
+        font-size: 14px;
+    }
+}

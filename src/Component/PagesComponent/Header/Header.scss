@@ -1,0 +1,192 @@
+
+$baseColor: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+$headerBackground: var(--header-background-image);
+// $contentBackgroundColor: rgb(237, 255, 236);
+$contentBackgroundColor: var(--gradient-color-1);
+$highlightColor: var(--base-primary-color-2);
+$primaryTextColor: var(--base-primary-color-3);
+$whiteColor: var(--white-color);
+
+.header {
+    background: $contentBackgroundColor;
+    height: 100vh;
+
+    position: relative;
+
+    .header-wrapper {
+        padding: 4rem 4rem;
+        height: 100%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        position: absolute;
+
+        .header-tagline-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .header-tagline {
+                width: 400px;
+                height: 140px;
+                background-color: $whiteColor;
+                color: $primaryTextColor;
+
+                font-family: "Parafina";
+                font-size: 40px;
+                text-align: center;
+                text-transform: uppercase;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0 15px;
+
+                border-radius: 15px;
+
+                
+            }
+
+            &:nth-child(even) .header-tagline {
+                transform: rotate(7deg);
+            }
+
+            &:nth-child(odd) .header-tagline {
+                transform: rotate(-7deg);
+            }
+        }
+
+        @media (max-width: 1020px) {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+
+            .header-tagline-container {
+                .header-tagline {
+                    // width: 250px;
+                    // height: 100px;
+                    // font-size: 22px;
+                }
+                
+                &:nth-child(even) {
+                    // align-self: flex-end;
+                    margin-left: 20vw;
+                }
+
+                &:nth-child(odd) {
+                    // align-self: flex-start;
+                    margin-right: 20vw;
+                }
+            }
+        }
+
+        @media (max-width: 720px) {
+            gap: 45px;
+
+            .header-tagline-container {
+                .header-tagline {
+                    font-size: 22px;
+                    // padding: 0 10px;
+                    width: 300px;
+                    height: 80px;
+                }
+            }
+        }
+
+        @media (max-width: 576px) {
+            padding: 2rem 2rem;
+
+            .header-tagline-container {
+                .header-tagline {
+                    
+                }
+
+                &:nth-child(even) {
+                    // align-self: flex-end;
+                    margin-left: 25vw;
+                }
+
+                &:nth-child(odd) {
+                    // align-self: flex-start;
+                    margin-right: 25vw;
+                }
+            }
+        }
+    }
+
+    .header-base-image {
+        width: 60vw;
+        max-width: 1100px;
+        // max-width: 1700px;
+        position: absolute;
+        bottom: -100px;
+        margin: 0 20vw;
+
+        img {
+            width: 100%;
+        }
+
+        @media (max-width: 1500px) {
+            width: 65vw;
+            // width: 1400px;
+            // margin: 0;
+            margin: 0 18vw;
+            bottom: -80px;
+        }
+
+        @media (max-width: 1300px) {
+            width: 80vw;
+            margin: 0 10vw;
+            bottom: -60px;
+        }
+
+        @media (max-width: 576px) {
+            width: 95vw;
+            margin: 0 2.5vw;
+            bottom: -40px;
+        }
+    }
+
+    .header-caption {
+        color: $whiteColor;
+        position: absolute;
+        bottom: 20px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        width: 100%;
+    
+        .header-caption-text {
+            font-size: 24px;
+            text-align: center;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        .header-caption-icon {
+            font-size: 24px;
+        }
+
+        @media (max-width: 720px) {
+            .header-caption-text {
+                font-size: 16px;
+                max-width: 200px;
+            }
+
+            .header-caption-icon {
+                font-size: 16px;
+            }
+        }
+    }
+}

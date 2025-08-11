@@ -1,0 +1,72 @@
+$baseColor: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+$backgroundColor: white;
+$textColor: var(--base-primary-color-3);
+
+.footer-container {
+    width: 100%;
+    background-color: $backgroundColor;
+    color: $textColor;
+    /*
+        1. Dapatkan info...
+        2. Sosmed
+    */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    padding: 5px 10px;
+
+    .footer-text {
+        font-size: 32px;
+        text-align: center;
+    
+        @media (max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+
+    .footer-socmed {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 35px;
+        }
+
+        .footer-socmed-link {
+            font-size: 32px;
+            color: inherit;
+            text-decoration-line: none;
+            line-height: 35px;
+            border-bottom: 3px solid $textColor;
+        
+        }
+
+        @media (max-width: 576px) {
+            gap: 3px;
+
+            img {
+                width: 15px;
+            }
+
+            .footer-socmed-link {
+                font-size: 14px;
+                line-height: 15px;
+                border-bottom: 1px solid $textColor;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        gap: 5px;
+    }
+}

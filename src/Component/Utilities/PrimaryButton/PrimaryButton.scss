@@ -1,0 +1,76 @@
+$baseColor1: var(--base-primary-color);
+$baseColor2: var(--base-secondary-color);
+$baseColor3: var(--base-primary-color-2);
+$baseColor4: var(--base-secondary-color-2);
+
+$primaryTextColor: var(--primary-text-color);
+$whiteColor: var(--white-color);
+
+.btn-custom {
+    font-family: "Satoshi";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    text-decoration: none;
+    // color: #12171a;
+    color: $whiteColor;
+    font-weight: 400;
+    // background: linear-gradient(150deg, $baseColor1 0%, $baseColor2 100%);
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 16px;
+    line-height: 20px;
+
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid $whiteColor;
+
+    .btn-icon {
+        font-size: 25px;
+        width: 30px;
+    }
+
+    transition: all 0.5s ease-in-out;
+    
+    &:hover, &:focus, &:active {
+        // background-position: 275px;
+        // background: linear-gradient(150deg, $baseColor3 0%, $baseColor4 100%);
+        color: $whiteColor;
+        opacity: 50%;
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &.is-fixed {
+        position: fixed;
+        z-index: 1001;
+        bottom: 30px;
+        right: 30px;
+
+        align-self: center;
+
+        @media screen and (max-width: 768px) {
+            text-align: center;
+            right: initial;
+            bottom: 4rem;
+            // font-size: 15px;
+            // border-radius: 50%;
+            padding: 0.7rem;
+            width: 95%;
+            margin: 0 10px;
+
+            .btn-text {
+                // display: none;
+            }
+
+            .btn-icon {
+                width: 40px;
+            }
+        }
+    }
+}
