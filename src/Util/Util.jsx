@@ -1,8 +1,5 @@
 import { isMobile } from 'react-device-detect';
 import CryptoJS from 'crypto-js';
-import Init from '../Init/Init';
-
-const { serviceType } = Init.constants;
 
 const buildWaLink = (action, service, waText = '') => {
     const waPhoneNumber = `6281383476308`;
@@ -26,21 +23,6 @@ const buildWaLink = (action, service, waText = '') => {
         `text=${ textMessage }`
     );
 };
-
-const orderLinkConstruct = (category, serviceCode = '', serviceName = '', toApp = true) => {
-    const appUrl = toApp ? `${process.env.REACT_APP_WEB_APP_URL}` : `/`;
-
-    switch( category ) {
-        case serviceType.legalService:
-            return `${appUrl}layanan-hukum/${serviceCode}`;
-        case serviceType.businessEntity:
-            return `${appUrl}pendirian-badan-usaha${serviceCode !== '' ? `/${serviceCode}` :  '' }`;
-        case serviceType.package:
-            return buildWaLink("mau berlangganan", serviceName);
-        default:
-            break;
-    }
-}
 
 const objectIsEmpty = (obj) => {
     if(obj === undefined || obj === null) obj = {};

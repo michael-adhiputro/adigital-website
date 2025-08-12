@@ -7,36 +7,29 @@ $primaryTextColor: var(--primary-text-color);
 $whiteColor: var(--white-color);
 
 .btn-custom {
-    font-family: "Satoshi";
+    font-family: "Poppins";
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 
     text-decoration: none;
-    // color: #12171a;
     color: $whiteColor;
     font-weight: 400;
-    // background: linear-gradient(150deg, $baseColor1 0%, $baseColor2 100%);
-    background: rgba(255, 255, 255, 0.1);
+    background: $baseColor2;
 
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
+    font-weight: 700;
 
-    padding: 8px 12px;
+    padding: 12px 16px;
     border-radius: 5px;
-    border: 1px solid $whiteColor;
-
-    .btn-icon {
-        font-size: 25px;
-        width: 30px;
-    }
+    border: 3px solid $whiteColor;
+    box-shadow: 1px 3px 10px 1px #a9a9a9;
 
     transition: all 0.5s ease-in-out;
     
     &:hover, &:focus, &:active {
-        // background-position: 275px;
-        // background: linear-gradient(150deg, $baseColor3 0%, $baseColor4 100%);
         color: $whiteColor;
         opacity: 50%;
     }

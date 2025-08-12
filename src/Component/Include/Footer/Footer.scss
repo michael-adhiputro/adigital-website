@@ -1,72 +1,101 @@
 $baseColor: var(--base-primary-color);
 $baseColor2: var(--base-secondary-color);
-$baseColor3: var(--base-primary-color-2);
-$baseColor4: var(--base-secondary-color-2);
+$baseShadeColor: var(--base-shade-color);
 
 $backgroundColor: white;
-$textColor: var(--base-primary-color-3);
+$textColor: var(--dark-color);
+
+$boxShadow: var(--shadow);
 
 .footer-container {
     width: 100%;
     background-color: $backgroundColor;
     color: $textColor;
-    /*
-        1. Dapatkan info...
-        2. Sosmed
-    */
+    padding: 40px 15vw 20px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;
 
-    padding: 5px 10px;
+    box-shadow: inset 0 4px 5px 2px $boxShadow;
 
-    .footer-text {
-        font-size: 32px;
-        text-align: center;
-    
-        @media (max-width: 576px) {
-            font-size: 14px;
+    .footer-address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px;
+        
+        font-family: 'Poppins';
+
+        .footer-address-title {
+            font-size: 25px;
+            color: $baseColor;
+            font-weight: 600;
+
+            &::after {
+                content: " ";
+                display: block;
+                background-color: $baseColor2;
+                width: 10%;
+                min-width: 100px;
+                height: 4px;
+            }
+        }
+
+        .footer-address-info {
+            .info-title {
+                font-weight: 600;
+            }
+
+            .info-address {
+                max-width: 400px;
+            }
+        }
+
+        .footer-address-copyright {
+            font-weight: 600;
+            color: $baseColor;
+        }
+    }
+
+    .footer-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        
+        a {
+            font-family: 'Poppins';
+            color: $baseColor;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
         }
     }
 
     .footer-socmed {
         display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 10px;
+        flex-direction: column;
+        gap: 15px;
 
-        img {
-            width: 35px;
+        .footer-socmed-label {
+            font-family: 'Poppins';
+            font-size: 20px;
+            color: $baseColor;
+            font-weight: 600;
+
+            max-width: 300px;
         }
 
-        .footer-socmed-link {
-            font-size: 32px;
-            color: inherit;
-            text-decoration-line: none;
-            line-height: 35px;
-            border-bottom: 3px solid $textColor;
-        
-        }
+        .footer-socmed-items {
+            display: flex;
+            gap: 15px;
 
-        @media (max-width: 576px) {
-            gap: 3px;
-
-            img {
-                width: 15px;
-            }
-
-            .footer-socmed-link {
-                font-size: 14px;
-                line-height: 15px;
-                border-bottom: 1px solid $textColor;
+            a {
+                color: $baseColor;
+                text-decoration: none;
+                font-size: 20px;
             }
         }
-    }
-
-    @media (max-width: 576px) {
-        gap: 5px;
     }
 }

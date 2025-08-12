@@ -71,16 +71,16 @@ class NavigationBar extends Component {
         const currentPath = window.location.pathname;
 
         const navbar = document.getElementById("navigation-bar");
-        const logo = document.getElementById("nav-logo");
-        const logoAlt = document.getElementById("nav-logo-alt");
+        // const logo = document.getElementById("nav-logo");
+        // const logoAlt = document.getElementById("nav-logo-alt");
         const yPosition = window.scrollY;
 
         if( yPosition > 84 ) {
             // Add customNavbarBg
             navbar.classList.add("custom-navbar-bg");
             navbar.classList.remove('navbar-dark');
-            logo.style.display = "none";
-            logoAlt.style.display = "block";
+            // logo.style.display = "none";
+            // logoAlt.style.display = "block";
 
             if( currentPath.indexOf("/research") > -1 || whiteBg ) {
                 navbar.classList.remove("bg-transparent");
@@ -91,14 +91,14 @@ class NavigationBar extends Component {
                 navbar.classList.add("custom-navbar-bg");
                 navbar.classList.remove('navbar-dark');
                 navbar.classList.add("bg-transparent");
-                logo.style.display = "none";
-                logoAlt.style.display = "block";
+                // logo.style.display = "none";
+                // logoAlt.style.display = "block";
             } else {
                 navbar.classList.remove("custom-navbar-bg");
                 navbar.classList.add('navbar-dark');
                 navbar.classList.remove("bg-transparent");
-                logo.style.display = "block";
-                logoAlt.style.display = "none";
+                // logo.style.display = "block";
+                // logoAlt.style.display = "none";
             }
         
         }
@@ -154,14 +154,14 @@ class NavigationBar extends Component {
 
                     <Navbar.Brand as={Anchor} href="/">
                         <img id="nav-logo" className="nav-logo" src={ Init.config.navbarLogo } alt="Logo" />
-                        <img id="nav-logo-alt" className="nav-logo" src={ Init.config.navbarLogoAlt } alt="Logo Alt" />
+                        {/* <img id="nav-logo-alt" className="nav-logo" src={ Init.config.navbarLogoAlt } alt="Logo Alt" /> */}
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
                         <FontAwesomeIcon icon={['fas', 'bars']} />
                     </Navbar.Toggle>
 
-                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="">
                             {
                                 navList.map( (item, index) => {

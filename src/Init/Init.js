@@ -10,15 +10,7 @@ var Init = {};
 
 // Constants
 Init.constants = {
-    serviceType: {
-        legalService: 1,
-        package: 2,
-        businessEntity: 3
-    },
-    paymentService: {
-        purwantara: 1,
-        cashbac: 2
-    }
+    
 };
 
 // Basic config
@@ -80,12 +72,19 @@ Init.config = {
     imageFolder: "/assets/images/",
     logoFolder: "/assets/logo/",
     iconFolder: "/assets/icons/",
+    clientFolder: "/assets/clients/",
     isMobile: isMobile,
     // googlePlayLink: "https://play.google.com/store/apps/details?id=com.landackapp",
     // appStoreLink: "https://apps.apple.com/id/app/landack/id6466232103",
     googleCaptchaSiteKey: process.env.REACT_APP_GOOGLE_CAPTCHA_SITE_KEY,
     googleCaptchaSecretKey: process.env.REACT_APP_GOOGLE_CAPTCHA_SECRET_KEY
 }
+
+Init.config.navbarLogo = `${ Init.config.logoFolder }logo-text-horizontal.png`;
+Init.config.navbarLogoAlt = `${ Init.config.logoFolder }logo-text-horizontal.png`;
+
+Init.config.headerImage = `${ Init.config.imageFolder }header-image.png`;
+Init.config.aboutUsImage = `${ Init.config.logoFolder }logo-text-vertical.png`;
 
 Init.config.imageIcon = `${ Init.config.iconFolder }favicon.png`;
 

@@ -7,9 +7,39 @@ const Routes = () => {
     return [
         {
             path: "/",
-            name: "Beranda",
-            visibility: false,
-            showNav: false,
+            name: "Home",
+            visibility: true,
+            showNav: true,
+            showFooter: true,
+            component: Homepage
+        },
+        {
+            path: "",
+            name: "Product",
+            visibility: true,
+            dropdown: [
+                {
+                    path: "#",
+                    name: "Sistem Koperasi",
+                    disabled: false
+                },
+                {
+                    path: "#",
+                    name: "E-commerce Platform",
+                    disabled: false
+                },
+                {
+                    path: "#",
+                    name: "Mini POS",
+                    disabled: false
+                },
+            ]
+        },
+        {
+            path: "/contact-us",
+            name: "Contact Us",
+            visibility: true,
+            showNav: true,
             showFooter: true,
             component: Homepage
         },

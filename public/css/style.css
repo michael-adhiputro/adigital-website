@@ -4,26 +4,13 @@
   --check-icon: url(/assets/icons/check-icon.png);
   
     /* Color Palette */
-    --base-primary-color: #003EFF;
-    --base-secondary-color: #3882FF;
-    --base-shade-color: #70C6FF;
-    
-    --base-primary-color-2: #287BFF;
-
-    --base-white-color: #C1E0FA;
-    --base-white-color-2: #FFFFFF;
-    --base-white-color-3: #F5F9FF;
-
-    --base-primary-color-3: #1994FF;
-    --base-secondary-color-3: #EFF6FD;
-
-    --gradient-color-1: linear-gradient(var(--base-primary-color), var(--base-secondary-color), var(--base-shade-color));
-    --gradient-color-2: linear-gradient(180deg, var(--base-primary-color-2) 40%, var(--base-shade-color));
-    --gradient-color-3: linear-gradient(90deg, var(--base-white-color), var(--base-white-color-2) 30%, var(--base-white-color-3) 80%);
+    --base-primary-color: #2196f3;
+    --base-secondary-color: #f5650e;
+    --base-shade-color: #21CBF3;
 
     --white-color: #FFFFFF;
     --default-bg-color: #FFF;
-    --dark-color: #1A1A1A;
+    --dark-color: #1c1c1e;
 
     --android-color: #001B65;
     --ios-color:#001B65;
@@ -34,9 +21,9 @@
 
     --placeholder-color: #484646;
 
-    /* Navbar */
-    --navbar-shadow: rgba(48, 49, 51, 0.2);
-    --navbar-brand-shadow: rgba(0, 113, 176, 0.18);
+    /* Shadow */
+    --shadow: rgba(48, 49, 51, 0.2);
+    --brand-shadow: rgba(0, 113, 176, 0.18);
 
     /* Box Shadow */
     --box-shadow: 9px 11px 39px -5px rgba(#edc953, 0.7);
@@ -57,4 +44,8 @@
   
     overflow-x: hidden;
     box-sizing: border-box;
+
+    /* Page Specific Style */
+    --product-bg-color: #E9FBFF;
+    --product-subtitle-color: #8A898E;
   }
