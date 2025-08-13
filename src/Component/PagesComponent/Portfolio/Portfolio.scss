@@ -63,4 +63,17 @@ $boxShadow: var(--shadow);
             }
         }
     }
+
+    @media (max-width: 576px) {    
+        padding: 80px 5vw 100px 5vw;
+
+        .portfolio-items {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+            .portfolio-item {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    }
 }
