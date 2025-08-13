@@ -103,7 +103,6 @@ class App extends Component {
       <>
         <SNI />
         <div ref={this.state.appRef} className={"App"}>
-          {/* <DownloadButton show={true} isFixed={true} text="Hubungi Waterfront Sekuritas" /> */}
           <NavigationBar show={this.pathMatch(this.state.currentRoute)} navList={routes} />
           <Footer show={ hasFooterRoutes.includes(this.state.currentRoute) } />
         </div>

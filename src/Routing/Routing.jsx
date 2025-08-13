@@ -25,7 +25,7 @@ const Routes = () => {
                 },
                 {
                     path: "#cooperative-system",
-                    name: "Sistem Koperasi",
+                    name: "Cooperative System",
                     disabled: false
                 },
                 {
@@ -35,22 +35,22 @@ const Routes = () => {
                 },
             ]
         },
-        {
-            path: "/contact-us",
-            name: "Contact Us",
-            visibility: true,
-            showNav: true,
-            showFooter: true,
-            component: Homepage
-        },
-        {
-            path: "/coming-soon",
-            name: "Coming Soon",
-            visibility: false,
-            showNav: false,
-            showFooter: false,
-            component: ComingSoon
-        },
+        // {
+        //     path: "#contact",
+        //     name: "Contact Us",
+        //     visibility: true,
+        //     showNav: true,
+        //     showFooter: true,
+        //     component: Homepage
+        // },
+        // {
+        //     path: "/coming-soon",
+        //     name: "Coming Soon",
+        //     visibility: false,
+        //     showNav: false,
+        //     showFooter: false,
+        //     component: ComingSoon
+        // },
         {
             path: "*",
             name: "Default",

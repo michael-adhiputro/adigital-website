@@ -12,9 +12,9 @@ const mapStateToProps = (state) => {
 }
 
 const SNI = (props) => {
-    const [ title, setTitle ] = useState("Waterfront Sekuritas");
-    const [ description, setDescription ] = useState("Bangun pertumbuhan aset dan raih tujuan finansial Anda bersama Waterfront Sekuritas.");
-    const [ keywords, setKeywords ] = useState("trading,web trading,investasi,aplikasi investasi,aplikasi trading");
+    const [ title, setTitle ] = useState("Adigital");
+    const [ description, setDescription ] = useState("Your Tech Business Companion.");
+    const [ keywords, setKeywords ] = useState("software development,it solution,jasa website,website development");
 
     useEffect( () => {
         setTitle(props.title);

@@ -97,7 +97,7 @@ DownloadButton.defaultProps = {
     customClass: '',
     show: true,
     withIcon: true,
-    text: 'Hubungi Waterfront Sekuritas!',
+    text: 'Hubungi Kami!',
     href: '',
     onClick: null
 }

@@ -5,15 +5,32 @@ import './Product.scss';
 import PrimaryButton from '../../Utilities/PrimaryButton/PrimaryButton';
 
 import { getProducts } from '../../../Data/Product';
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 
 let config = Init.config;
 const FontAwesomeIcon = Init.FontAwesomeIcon;
 
 const Product = (props) => {
     const data = getProducts();
+    const carouselConfig = config.carousel;
 
+    carouselConfig.containerClass = "product-carousel-container";
+    carouselConfig.itemClass = "product-carousel-holder";
+    // carouselConfig.showDots = true;
+    
     const scrollDown = (index) => {
-        console.log(data[index]);
+        const item = data[index];
+        const elementId = item.name.split(" ").join("-").toLowerCase();
+
+        // const navbar = document.getElementById('navigation-bar');
+        const section = document.getElementById(elementId);
+        
+        window.scroll({
+            behavior: 'smooth',
+            top: section.offsetTop
+            // top: section.offsetTop
+        });
     };
 
     return (
@@ -31,36 +48,40 @@ const Product = (props) => {
                 </h2>
             </div>
 
-            <div className="product-list-container">
+            <Carousel 
+                {...carouselConfig}
+            >
                 {
                     data.map( (item, index) => {
-                        return (
-                            <div key={index} className="product-list-item">
-                                {/* 
-                                    1. Icon
-                                    2. Title
-                                    3. Short Desc
-                                    4. Button
-                                */}
-                                <div className="product-list-item-header">
-                                    <div className="product-list-item-icon">
-                                        <img src={`${ item.icon }`} alt="" />
-                                    </div>
-                                    <h4 className="product-list-item-title">
-                                        { item.name }
-                                    </h4>
+                    return (
+                        <div key={index} className="product-list-item">
+                            {/* 
+                                1. Icon
+                                2. Title
+                                3. Short Desc
+                                4. Button
+                            */}
+                            <div className="product-list-item-header">
+                                <div className="product-list-item-icon">
+                                    <img src={`${ item.icon }`} alt="" />
                                 </div>
-                                <div className="product-list-item-desc">
-                                    { item.shortDesc }
-                                </div>
-                                <div className="product-list-btn-container">
-                                    <PrimaryButton onClick={ () => scrollDown(index) } text="Learn more" customClass="btn-learn-more" />
-                                </div>
+                                <h4 className="product-list-item-title">
+                                    { item.name }
+                                </h4>
                             </div>
-                        )
-                    } )
+                            <div className="product-list-item-desc">
+                                { item.shortDesc }
+                            </div>
+                            <div className="product-list-btn-container">
+                                <PrimaryButton onClick={ 
+                                    () => scrollDown(index) 
+                                } text="Learn more" customClass="btn-learn-more" />
+                            </div>
+                        </div>
+                    )
+                } )
                 }
-            </div>
+            </Carousel>
         </div>
     );
 }

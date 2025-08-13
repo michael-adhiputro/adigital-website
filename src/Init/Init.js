@@ -18,7 +18,7 @@ Init.config = {
     carousel: {
         swipeable: true,
         draggable: true,
-        showDots: true,
+        showDots: false,
         responsive: {
             desktop: {
               breakpoint: { max: 3000, min: 1024 },
@@ -26,29 +26,29 @@ Init.config = {
               slidesToSlide: 3 // optional, default to 1.
             },
             tablet: {
-              breakpoint: { max: 1024, min: 464 },
+              breakpoint: { max: 1024, min: 768 },
               items: 2,
               slidesToSlide: 2 // optional, default to 1.
             },
             mobile: {
-              breakpoint: { max: 464, min: 0 },
+              breakpoint: { max: 768, min: 0 },
               items: 1,
               slidesToSlide: 1 // optional, default to 1.
             }
         },
         ssr: false, // means to render carousel on server-side.
-        infinite: true,
+        infinite: false,
         autoPlay: false,
         autoPlaySpeed: 99999,
         keyBoardControl: true,
-        customTransition: "all .5",
+        // transition: "all .5",
         transitionDuration: 500,
         removeArrowOnDeviceType: [
-            // "tablet", 
             // "mobile", 
-            // "web"
+            "tablet", 
+            "desktop"
         ],
-        deviceType: "web",
+        // deviceType: "desktop",
         partialVisible: false,
         centerMode: false,
         containerClass: "carousel-container",
