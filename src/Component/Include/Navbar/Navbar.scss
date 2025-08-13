@@ -238,6 +238,8 @@ $boxShadow: var(--shadow);
         }
 
         .navbar-collapse {
+            box-shadow: 1px 4px 5px 2px $boxShadow;
+            
             .navbar-nav {
                 .nav-link {
                     padding: 18px 25px;
