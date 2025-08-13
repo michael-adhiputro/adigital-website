@@ -247,5 +247,15 @@ $boxShadow: var(--shadow);
                 }
             }
         }
+
+        .nav-item {
+            &.dropdown {
+                .dropdown-menu {
+                    .nav-link {
+                        padding: 18px 50px;
+                    }
+                }
+            }
+        }
     }
 }
