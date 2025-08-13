@@ -14,22 +14,22 @@ const Routes = () => {
             component: Homepage
         },
         {
-            path: "",
+            // path: "",
             name: "Product",
             visibility: true,
             dropdown: [
                 {
-                    path: "#",
-                    name: "Sistem Koperasi",
-                    disabled: false
-                },
-                {
-                    path: "#",
+                    path: "#e-commerce-platform",
                     name: "E-commerce Platform",
                     disabled: false
                 },
                 {
-                    path: "#",
+                    path: "#cooperative-system",
+                    name: "Sistem Koperasi",
+                    disabled: false
+                },
+                {
+                    path: "#mini-pos-system",
                     name: "Mini POS",
                     disabled: false
                 },

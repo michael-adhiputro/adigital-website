@@ -21,9 +21,13 @@ const Portfolio = (props) => {
                 {
                     data.map( (item, index) => {
                         return (
-                            <div key={index} className="portfolio-item">
-                                <img src={ item.image } alt={ item.name } />
-                            </div>
+                            <>
+                                <div key={index} className="portfolio-item-wrapper">
+                                    <div className="portfolio-item">
+                                        <img src={ item.image } alt={ item.name } />
+                                    </div>
+                                </div>
+                            </>
                         )
                     } )
                 }

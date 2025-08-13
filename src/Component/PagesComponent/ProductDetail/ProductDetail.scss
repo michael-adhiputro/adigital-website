@@ -75,4 +75,33 @@ $boxShadow: var(--shadow);
             }
         }
     }
+
+    @media (max-width: 990px) {
+        padding: 40px 10vw 100px 10vw;
+    }
+
+    @media (max-width: 827px) {
+        gap: 30px;
+
+        .product-detail-item {
+            padding: 30px 0;
+            
+            &.left-to-right {
+                flex-direction: column;
+            }
+
+            &.right-to-left {
+                flex-direction: column;
+            }
+
+            .product-detail-item-image {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 20px 5vw 20px 5vw;
+    }
 }

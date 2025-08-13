@@ -9,6 +9,8 @@ $textColor: $baseColor4;
 $dropdownTextColor: var(--primary-text-color);
 $whiteColor: var(--white-color);
 
+$boxShadow: var(--shadow);
+
 .navbar {
     // height: 100px;
     // height: 13vh;
@@ -26,17 +28,24 @@ $whiteColor: var(--white-color);
 
     &.custom-navbar-bg {
         background: $whiteColor;
+        box-shadow: 1px 4px 5px 2px $boxShadow;
 
         &.bg-transparent {
             background: rgba(0,0,0,0);
         }
 
-        .nav-link {
+        .nav-link, .dropdown-menu .nav-link {
             color: $baseColor1;
+            display: block;
         }
 
         .navbar-toggler {
-            color: $dropdownTextColor;
+            color: $baseColor1;
+            display: block;
+
+            @media (min-width: 1200px) {
+                display: none;
+            }
     
             .navbar-toggler-icon {
                 // Change background image to custom   
@@ -58,6 +67,7 @@ $whiteColor: var(--white-color);
     .navbar-toggler {
         border: none;
         color: white;
+        display: none;
 
         &:focus, &:focus-visible, &:focus-within {
             border: none;
@@ -70,7 +80,7 @@ $whiteColor: var(--white-color);
         }
     }
 
-    .nav-link {
+    .nav-link, .dropdown-menu .nav-link {
         font-family: 'Poppins';
 
         font-weight: 600;
@@ -85,6 +95,8 @@ $whiteColor: var(--white-color);
         border: none;
         outline: none;
 
+        display: none;
+
         &.disabled {
             opacity: 0.6;
         }
@@ -93,16 +105,6 @@ $whiteColor: var(--white-color);
             // border-color: $baseColor3;
             color: $baseColor2;
         }
-
-        &#services {
-            &:hover, &:focus, &:active {
-                .navbar-hover {
-                    display: block;
-                }
-            }
-
-        }
-
     }
 
     .nav-item.dropdown {
@@ -200,7 +202,7 @@ $whiteColor: var(--white-color);
     @media screen and (max-width: 1199px) {
         .navbar-collapse {
             position: absolute;
-            top: 79px;
+            top: 60px;
             right: 0;
 
             .navbar-nav {
@@ -213,21 +215,26 @@ $whiteColor: var(--white-color);
         
                 .nav-link {
                     padding: 18px 76px;
-                    font-weight: 500;
+                    // font-weight: 500;
                     margin: 0;
                     font-size: 19px;
                     border: none;
-                    color: $dropdownTextColor;
-        
-                    &:hover, &:active, &:focus {
-                        color: $navBorderColor;
-                    }
                 }
             }
         }
     }
 
+    @media (max-width: 990px) {
+        padding: 10px 80px 20px;
+    }
+
     @media screen and (max-width: 576px) {
-        padding: 0 25px;
+        padding: 10px 25px;
+
+        .navbar-brand {
+            .nav-logo {
+                width: 150px;
+            }
+        }
     }
 }

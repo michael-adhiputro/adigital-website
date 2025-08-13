@@ -59,19 +59,19 @@ $boxShadow: var(--shadow);
         }
     }
 
-    .footer-menu {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
+    // .footer-menu {
+    //     display: grid;
+    //     grid-template-columns: 1fr 1fr;
+    //     gap: 15px;
         
-        a {
-            font-family: 'Poppins';
-            color: $baseColor;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 600;
-        }
-    }
+    //     a {
+    //         font-family: 'Poppins';
+    //         color: $baseColor;
+    //         text-decoration: none;
+    //         font-size: 20px;
+    //         font-weight: 600;
+    //     }
+    // }
 
     .footer-socmed {
         display: flex;
@@ -97,5 +97,34 @@ $boxShadow: var(--shadow);
                 font-size: 20px;
             }
         }
+    }
+
+    @media (max-width: 1120px) {
+        padding: 40px 10vw 20px;
+    }
+
+    @media (max-width: 990px) {
+        padding: 40px 80px 20px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 40px 80px 20px;
+
+        flex-direction: column-reverse;
+        gap: 30px;
+
+        .footer-address {
+            width: 100%;
+
+            .footer-address-info {
+                .info-address {
+                    max-width: unset;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 40px 40px 20px;
     }
 }

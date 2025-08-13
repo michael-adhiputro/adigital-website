@@ -86,6 +86,9 @@ Init.config.navbarLogoAlt = `${ Init.config.logoFolder }logo-text-horizontal.png
 Init.config.headerImage = `${ Init.config.imageFolder }header-image.png`;
 Init.config.aboutUsImage = `${ Init.config.logoFolder }logo-text-vertical.png`;
 
+Init.config.headerAssetOne = `${ Init.config.imageFolder }header-asset-1.png`;
+Init.config.headerAssetTwo = `${ Init.config.imageFolder }header-asset-2.png`;
+
 Init.config.imageIcon = `${ Init.config.iconFolder }favicon.png`;
 
 // Extensions

@@ -9,7 +9,7 @@ const FontAwesomeIcon = Init.FontAwesomeIcon;
 
 const Header = (props) => {
     return (
-        <div id={`header`} className="header">
+        <div id={`home`} className="header">
             {/* 
                 1. Content
                     - Title
@@ -17,6 +17,13 @@ const Header = (props) => {
                     - Button
                 2. Image
             */}
+            <div id="header-ornament-1" className="header-ornament">
+                <img src={ config.headerAssetOne } alt="" />
+            </div>
+            <div id="header-ornament-2" className="header-ornament">
+                <img src={ config.headerAssetTwo } alt="" />
+            </div>
+
             <div className="header-content">
                 <div className="header-content-title">
                     <h1 className="title">

@@ -48,7 +48,7 @@ class Homepage extends Component {
 
                 <Header />
                 <AboutUs />
-                <Product />
+                {/* <Product /> */}
                 <ProductDetail />
                 <Portfolio />
             </div>

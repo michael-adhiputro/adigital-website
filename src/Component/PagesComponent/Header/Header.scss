@@ -16,7 +16,29 @@ $primaryTextColor: var(--base-primary-color-3);
     align-items: center;
     justify-content: center;
 
-    padding: 0 5vw 0 10vw;
+    padding: 0 1vw 0 15vw;
+    position: relative;
+    overflow: hidden;
+
+    .header-ornament {
+        position: absolute;
+        width: 1200px;
+
+        
+        &#header-ornament-1 {
+            top: -250px;
+            right: -10px;
+        }
+        
+        &#header-ornament-2 {
+            bottom: -150px;
+            left: -100px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
 
     .header-content {
         display: flex;
@@ -25,7 +47,9 @@ $primaryTextColor: var(--base-primary-color-3);
         justify-content: flex-start;
         gap: 30px;
 
-        width: 80%;
+        width: 100%;
+
+        z-index: 999;
 
         .header-content-title {
             .title {
@@ -52,9 +76,92 @@ $primaryTextColor: var(--base-primary-color-3);
 
     .header-image {
         align-self: flex-end;
-        width: 100%;
+        min-width: 800px;
+
+        z-index: 999;
 
         img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1450px) {
+        .header-ornament {
+            width: 900px;
+    
+            &#header-ornament-1 {
+                top: -150px;
+                right: -10px;
+            }
+            
+            &#header-ornament-2 {
+                bottom: -100px;
+                left: -100px;
+            }
+        }
+
+    }
+
+    @media (max-width: 1220px) {
+        .header-image {
+            min-width: 700px;
+        }
+    }
+
+    @media (max-width: 990px) {
+        height: 100%;
+
+        padding: 150px 150px 0 150px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 70px;
+
+        .header-ornament {
+            width: 700px;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .header-image {
+            width: 650px;
+            align-self: unset;
+            min-width: unset;
+        }
+    }
+
+    @media (max-width: 855px) {
+        padding: 150px 75px 0 75px;
+    }
+
+    @media (max-width: 705px) {
+        padding: 150px 30px 0 30px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 150px 0 0 0;
+
+        .header-ornament {
+            width: 450px;
+
+            &#header-ornament-1 {
+                top: -55px;
+                right: -30px;
+            }
+
+            &#header-ornament-2 {
+                bottom: -55px;
+                left: -50px;
+            }
+        }
+
+        .header-content {
+            padding: 0 30px;
+        }
+
+        .header-image {
             width: 100%;
         }
     }

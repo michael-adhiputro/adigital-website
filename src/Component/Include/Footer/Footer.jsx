@@ -68,12 +68,12 @@ class Footer extends Component {
                             Copyright © 2025
                         </div>
                     </div>
-                    <div className="footer-menu">
+                    {/* <div className="footer-menu">
                         <a href="#"> Home </a>
                         <a href="#"> About Us </a>
                         <a href="#"> Product </a>
                         <a href="#"> Contact Us </a>
-                    </div>
+                    </div> */}
                     <div className="footer-socmed">
                         <div className="footer-socmed-label">
                             Follow Our Social Media, Let's Collaborate!

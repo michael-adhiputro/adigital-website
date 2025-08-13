@@ -23,7 +23,7 @@ const ProductDetail = (props) => {
             {
                 data.map( (item, index) => {
                     return (
-                        <div key={index} className={`product-detail-item ${ index % 2 === 0 ? "left-to-right" : "right-to-left" }`}>
+                        <div key={index} id={`${ item.name.split(" ").join("-").toLowerCase() }`} className={`product-detail-item ${ index % 2 === 0 ? "left-to-right" : "right-to-left" }`}>
                             <div className="product-detail-item-image">
                                 <img src={ item.icon } alt="" />
                             </div>
