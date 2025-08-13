@@ -118,12 +118,18 @@ $boxShadow: var(--shadow);
     }
 
     @media (max-width: 576px) {
-        padding: 150px 40px 75px 40px;
+        padding: 150px 5vw 75px 5vw;
 
         .about-us-container {
             .about-us-image {
                 width: 200px;
                 top: -100px;
+            }
+
+            .about-us-content {
+                .about-us-content-title {
+                    font-size: 30px;
+                }
             }
         }
     }

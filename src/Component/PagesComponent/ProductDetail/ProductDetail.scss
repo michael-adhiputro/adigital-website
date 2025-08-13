@@ -103,5 +103,30 @@ $boxShadow: var(--shadow);
 
     @media (max-width: 576px) {
         padding: 20px 5vw 20px 5vw;
+        gap: 30px;
+
+        .product-detail-item {
+            gap: 15px;
+
+            .product-detail-item-image {
+                width: 200px;
+            }
+
+            .product-detail-item-content {
+                gap: 15px;
+                
+                .content-title {
+                    font-size: 30px;
+
+                    &::after {
+                        min-width: 70px;
+                    }
+                }
+
+                .content-desc {
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }
