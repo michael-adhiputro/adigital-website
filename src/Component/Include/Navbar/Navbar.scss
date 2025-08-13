@@ -236,5 +236,14 @@ $boxShadow: var(--shadow);
                 width: 150px;
             }
         }
+
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-link {
+                    padding: 18px 5vw;
+                    font-size: 16px;
+                }
+            }
+        }
     }
 }
