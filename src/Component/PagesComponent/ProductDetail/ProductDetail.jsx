@@ -1,16 +1,26 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Init from '../../../Init/Init';
 import './ProductDetail.scss';
 import PrimaryButton from '../../Utilities/PrimaryButton/PrimaryButton';
 
-import { getProducts } from '../../../Data/Product';
+import { connect } from 'react-redux';
 
 let config = Init.config;
 const FontAwesomeIcon = Init.FontAwesomeIcon;
 
+const mapStateToProps = (state) => {
+    return {
+        products: state.product.data
+    };
+}
+
 const ProductDetail = (props) => {
-    const data = getProducts();
+    const [ data, setData ] = useState([]);
+
+    useEffect(() => {
+        setData(props.products);
+    }, [props.products]);
 
     return (
         <div id={`product-detail`} className="product-detail">
@@ -21,9 +31,10 @@ const ProductDetail = (props) => {
                     - Desc
             */}
             {
+                data.length > 0 && 
                 data.map( (item, index) => {
                     return (
-                        <div key={index} id={`${ item.name.split(" ").join("-").toLowerCase() }`} className={`product-detail-item ${ index % 2 === 0 ? "left-to-right" : "right-to-left" }`}>
+                        <div key={index} id={`${ item.slug }`} className={`product-detail-item ${ index % 2 === 0 ? "left-to-right" : "right-to-left" }`}>
                             <div className="product-detail-item-image">
                                 <img src={ item.icon } alt="" />
                             </div>
@@ -45,4 +56,4 @@ const ProductDetail = (props) => {
 
 
 
-export default ProductDetail;
+export default connect(mapStateToProps)(ProductDetail);

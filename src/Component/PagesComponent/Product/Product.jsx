@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Init from '../../../Init/Init';
 import './Product.scss';
@@ -8,11 +8,19 @@ import { getProducts } from '../../../Data/Product';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
+import { connect } from 'react-redux';
+
 let config = Init.config;
 const FontAwesomeIcon = Init.FontAwesomeIcon;
 
+const mapStateToProps = (state) => {
+    return {
+        products: state.product.data
+    }
+}
+
 const Product = (props) => {
-    const data = getProducts();
+    const [ data, setData ] = useState([]);
     const carouselConfig = config.carousel;
 
     carouselConfig.containerClass = "product-carousel-container";
@@ -21,9 +29,8 @@ const Product = (props) => {
     
     const scrollDown = (index) => {
         const item = data[index];
-        const elementId = item.name.split(" ").join("-").toLowerCase();
+        const elementId = item.slug;
 
-        // const navbar = document.getElementById('navigation-bar');
         const section = document.getElementById(elementId);
         
         window.scroll({
@@ -32,6 +39,11 @@ const Product = (props) => {
             // top: section.offsetTop
         });
     };
+
+    useEffect(() => {
+        console.log(props.products);
+        setData(props.products);
+    }, [props.products]);
 
     return (
         <div id={`products`} className="products">
@@ -48,44 +60,48 @@ const Product = (props) => {
                 </h2>
             </div>
 
-            <Carousel 
-                {...carouselConfig}
-            >
-                {
-                    data.map( (item, index) => {
-                    return (
-                        <div key={index} className="product-list-item">
-                            {/* 
-                                1. Icon
-                                2. Title
-                                3. Short Desc
-                                4. Button
-                            */}
-                            <div className="product-list-item-header">
-                                <div className="product-list-item-icon">
-                                    <img src={`${ item.icon }`} alt="" />
+            {
+                data.length > 0 ? (
+                    <Carousel 
+                        {...carouselConfig}
+                    >
+                        {
+                            data.map( (item, index) => {
+                            return (
+                                <div key={index} className="product-list-item">
+                                    {/* 
+                                        1. Icon
+                                        2. Title
+                                        3. Short Desc
+                                        4. Button
+                                    */}
+                                    <div className="product-list-item-header">
+                                        <div className="product-list-item-icon">
+                                            <img src={`${ item.icon }`} alt="" />
+                                        </div>
+                                        <h4 className="product-list-item-title">
+                                            { item.name }
+                                        </h4>
+                                    </div>
+                                    <div className="product-list-item-desc">
+                                        { item.short_desc }
+                                    </div>
+                                    <div className="product-list-btn-container">
+                                        <PrimaryButton onClick={ 
+                                            () => scrollDown(index) 
+                                        } text="Learn more" customClass="btn-learn-more" />
+                                    </div>
                                 </div>
-                                <h4 className="product-list-item-title">
-                                    { item.name }
-                                </h4>
-                            </div>
-                            <div className="product-list-item-desc">
-                                { item.shortDesc }
-                            </div>
-                            <div className="product-list-btn-container">
-                                <PrimaryButton onClick={ 
-                                    () => scrollDown(index) 
-                                } text="Learn more" customClass="btn-learn-more" />
-                            </div>
-                        </div>
-                    )
-                } )
-                }
-            </Carousel>
+                            )
+                        } )
+                        }
+                    </Carousel>
+                ) : ""
+            }
         </div>
     );
 }
 
 
 
-export default Product;
+export default connect(mapStateToProps)(Product);

@@ -41,7 +41,7 @@ class FormInput extends Component {
         let inputAs = "";
         let isRequired = state.attribute.hasOwnProperty('required') && state.attribute.required;
         let inputPlaceholder = state.attribute.hasOwnProperty('placeholder') ? state.attribute.placeholder : "Enter your " + state.attribute.label.toLowerCase();
-        let options = inputType === 'select' && this.props.hasOwnProperty('options') && this.props.options !== undefined ? this.props.options : []; // { value: '', label: '' }
+        let options = inputType === 'select' && this.props.attribute.hasOwnProperty('options') && this.props.attribute.options !== undefined ? this.props.attribute.options : []; // { value: '', label: '' }
         let autoComplete = state.attribute.hasOwnProperty('autoComplete') ? state.attribute.autoComplete.toString() : "true";
         let hasError = state.attribute.hasOwnProperty('hasError') ? state.attribute.hasError : false;
         let errorMessage = state.attribute.hasOwnProperty('errorMessage') ? state.attribute.errorMessage.replace(inputName, properName) : `Invalid ${properName} input`;
@@ -79,6 +79,7 @@ class FormInput extends Component {
                     <>
                         <Form.Select
                             // as={inputAs}
+                            defaultValue=""
                             name={inputName}
                             type={inputType} 
                             ref={state.attribute.ref} 
@@ -87,6 +88,7 @@ class FormInput extends Component {
                             onChange={(event) => this.updateInput(event,state.attribute.ref)}
                             isInvalid={hasError}
                         >
+                            <option value="" disabled hidden>{ inputPlaceholder }</option>
                             {
                                 options.map( (value, key) => {
                                     return (
@@ -150,7 +152,7 @@ class FormInput extends Component {
         let isRequired = this.state.hasOwnProperty('attribute') && this.state.attribute.hasOwnProperty('required') && this.state.attribute.required;
 
         return this.state.hasOwnProperty('attribute') && (
-            <Col sm={this.state.attribute.width} className="mb-3">
+            <Col sm={this.state.attribute.width} className="mb-3 form-input">
                 <FormGroup className='form-items'>
                     {
                         this.state.attribute.label !== '' ? (

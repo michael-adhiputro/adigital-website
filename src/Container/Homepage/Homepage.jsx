@@ -8,6 +8,7 @@ import AboutUs from '../../Component/PagesComponent/AboutUs/AboutUs';
 import Product from '../../Component/PagesComponent/Product/Product';
 import ProductDetail from '../../Component/PagesComponent/ProductDetail/ProductDetail';
 import Portfolio from '../../Component/PagesComponent/Portfolio/Portfolio';
+import CTA from '../../Component/PagesComponent/CTA/CTA';
 
 class Homepage extends Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class Homepage extends Component {
                 <Product />
                 <ProductDetail />
                 <Portfolio />
+                <CTA />
             </div>
         );
     }

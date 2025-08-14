@@ -9,6 +9,12 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavigationContext from '../../../Context/NavigationContext';
 
+import productActions from '../../../Redux/Products/product-action';
+import portfolioActions from '../../../Redux/Portfolio/portfolio-action';
+
+const { loadProducts } = productActions;
+const { loadPortfolio } = portfolioActions;
+
 const withParameters = (Component) => {
     function ComponentWithRouter(props) {
         useEffect( () => {
@@ -42,9 +48,16 @@ const withParameters = (Component) => {
     return ComponentWithRouter
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
         
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        initProducts: () => dispatch(loadProducts()),
+        initPortfolio: () => dispatch(loadPortfolio())
     }
 }; 
 
@@ -61,6 +74,9 @@ class NavigationBar extends Component {
     componentDidMount() {
         this.onScroll();
         window.addEventListener("scroll", (event) => this.onScroll(event));
+
+        this.props.initProducts();
+        this.props.initPortfolio();
     }
 
     componentDidUpdate() {
@@ -112,21 +128,17 @@ class NavigationBar extends Component {
     }
 
     handleNavClick = (path) => {
-        let navRef = this.state.navRef.current;
+        const currentPath = path;
+        const elementId = currentPath.replace('#', '');
+
+        // const navbar = document.getElementById('navigation-bar');
+        const section = document.getElementById(elementId);
         
-        if(navRef !== null) {
-            const currentPath = path;
-            const elementId = currentPath.replace('#', '');
-    
-            // const navbar = document.getElementById('navigation-bar');
-            const section = document.getElementById(elementId);
-            
-            window.scroll({
-                behavior: 'smooth',
-                top: section.offsetTop
-                // top: section.offsetTop
-            });
-        }
+        window.scroll({
+            behavior: 'smooth',
+            top: section.offsetTop
+            // top: section.offsetTop
+        });
     }
 
     componentWillUnmount() {
@@ -288,4 +300,4 @@ class NavigationBar extends Component {
     }
 }
 
-export default connect(null, mapDispatchToProps)(NavigationBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);

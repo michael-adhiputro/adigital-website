@@ -1,16 +1,25 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Init from '../../../Init/Init';
 import './Portfolio.scss';
-import PrimaryButton from '../../Utilities/PrimaryButton/PrimaryButton';
 
-import { getPortfolio } from '../../../Data/Portfolio';
+import { connect } from 'react-redux';
 
 let config = Init.config;
 const FontAwesomeIcon = Init.FontAwesomeIcon;
 
+const mapStateToProps = (state) => {
+    return {
+        portfolio: state.portfolio.data
+    }
+}
+
 const Portfolio = (props) => {
-    const data = getPortfolio();
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setData(props.portfolio);
+    }, [props.portfolio]);
 
     return (
         <div id={`portfolio`} className="portfolio">
@@ -36,4 +45,4 @@ const Portfolio = (props) => {
 
 
 
-export default Portfolio;
+export default connect(mapStateToProps)(Portfolio);

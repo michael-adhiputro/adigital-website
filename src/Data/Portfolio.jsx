@@ -1,20 +1,13 @@
 import Init from "../Init/Init";
+import api from "./API";
 
-const portfolios = [
-    {
-        name: "House of Beef",
-        image: `${ Init.config.clientFolder }house-of-beef.png`,
-    },
-    {
-        name: "YoboyCup",
-        image: `${ Init.config.clientFolder }yoboycup.png`,
-    },
-    {
-        name: "Sentosa Agri Prima",
-        image: `${ Init.config.clientFolder }sap.png`,
-    }
-];
+const pathList = {
+    list: '/portfolio/',
+}
 
-export const getPortfolio = () => {
-    return portfolios;
+export const getPortfolio = async () => {
+    // return products;
+    const response = await api.getCall(pathList.list, null, {});
+
+    return response;
 }

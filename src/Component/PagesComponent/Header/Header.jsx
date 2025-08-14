@@ -39,7 +39,7 @@ const Header = (props) => {
                         customClass="header-button"
                         onClick={ () => {} }
                         text={ "Let's Collaborate" }
-                        customIcon={<FontAwesomeIcon icon={['fas', 'arrow-right']} />}
+                        customIcon={<FontAwesomeIcon className="header-button-icon" icon={['fas', 'arrow-right']} />}
                         iconPosition="right"
                     />
                 </div>

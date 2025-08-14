@@ -17,6 +17,7 @@ const Routes = () => {
             // path: "",
             name: "Product",
             visibility: true,
+            ssrDropdown: true,
             dropdown: [
                 {
                     path: "#e-commerce-platform",
@@ -35,14 +36,14 @@ const Routes = () => {
                 },
             ]
         },
-        // {
-        //     path: "#contact",
-        //     name: "Contact Us",
-        //     visibility: true,
-        //     showNav: true,
-        //     showFooter: true,
-        //     component: Homepage
-        // },
+        {
+            path: "#contact",
+            name: "Contact Us",
+            visibility: true,
+            showNav: true,
+            showFooter: true,
+            component: Homepage
+        },
         // {
         //     path: "/coming-soon",
         //     name: "Coming Soon",
