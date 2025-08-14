@@ -46,6 +46,7 @@ $boxShadow: var(--shadow);
 
         .cta-highlight {
             color: $baseColor2;
+            display: block;
         }
     }
 
@@ -73,6 +74,11 @@ $boxShadow: var(--shadow);
                 opacity: 1;
             }
         }
+    }
+
+    @media (max-width: 990px) {
+        padding: 80px 5vw 100px 5vw;
+        flex-direction: column;
     }
 
     @media (max-width: 576px) {    
