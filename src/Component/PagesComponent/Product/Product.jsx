@@ -23,7 +23,7 @@ const Product = (props) => {
 
     carouselConfig.containerClass = "product-carousel-container";
     carouselConfig.itemClass = "product-carousel-holder";
-    // carouselConfig.showDots = true;
+    carouselConfig.showDots = true;
 
     const scrollDown = (index) => {
         const item = data[index];
@@ -78,7 +78,7 @@ const Product = (props) => {
                                                 <img src={`${item.icon}`} alt="" />
                                             </div>
                                             <h4 className="product-list-item-title">
-                                                {item.name}
+                                                {item.short_name}
                                             </h4>
                                         </div>
                                         <div className="product-list-item-desc">
