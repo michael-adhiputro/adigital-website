@@ -1,13 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import Init from '../../../Init/Init';
 import './ProductDetail.scss';
-import PrimaryButton from '../../Utilities/PrimaryButton/PrimaryButton';
 
 import { connect } from 'react-redux';
-
-let config = Init.config;
-const FontAwesomeIcon = Init.FontAwesomeIcon;
 
 const mapStateToProps = (state) => {
     return {
@@ -16,7 +11,7 @@ const mapStateToProps = (state) => {
 }
 
 const ProductDetail = (props) => {
-    const [ data, setData ] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         setData(props.products);
@@ -31,24 +26,52 @@ const ProductDetail = (props) => {
                     - Desc
             */}
             {
-                data.length > 0 && 
-                data.map( (item, index) => {
+                data.length > 0 &&
+                data.filter((item) => item.hasOwnProperty('is_service') && item.is_service === 0).map((item, index) => {
                     return (
-                        <div key={index} id={`${ item.slug }`} className={`product-detail-item ${ index % 2 === 0 ? "left-to-right" : "right-to-left" }`}>
+                        <div key={index} id={`${item.slug}`} className={`product-detail-item ${index % 2 === 0 ? "left-to-right" : "right-to-left"}`}>
                             <div className="product-detail-item-image">
-                                <img src={ item.icon } alt="" />
+                                <img src={item.icon} alt="" />
                             </div>
                             <div className="product-detail-item-content">
                                 <h3 className="content-title">
-                                    { item.name }
+                                    {item.name}
                                 </h3>
                                 <div className="content-desc">
-                                    { item.desc }
+                                    {item.desc}
                                 </div>
                             </div>
                         </div>
                     )
-                } )
+                })
+            }
+            <div className="product-detail-title-container">
+                <h2 className="product-detail-title">
+                    Our Service
+                </h2>
+                <h4 className="product-detail-subtitle">
+                    Tailored to your needs
+                </h4>
+            </div>
+            {
+                data.length > 0 &&
+                data.filter((item) => item.hasOwnProperty('is_service') && item.is_service === 1).map((item, index) => {
+                    return (
+                        <div key={index} id={`${item.slug}`} className={`product-detail-item ${index % 2 === 0 ? "left-to-right" : "right-to-left"}`}>
+                            <div className="product-detail-item-image">
+                                <img src={item.icon} alt="" />
+                            </div>
+                            <div className="product-detail-item-content">
+                                <h3 className="content-title">
+                                    {item.name}
+                                </h3>
+                                <div className="content-desc">
+                                    {item.desc}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
             }
         </div>
     );
